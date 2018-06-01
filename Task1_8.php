@@ -1,46 +1,22 @@
-//Task7_1 Выяснить, есть ли в записи натурального числа N две одинаковые цифры.
+//Task1_8 Получить все четырехзначные целые числа, в записи которых нет одинаковых цифр.
 
-  $findNumber = 10289834;
-	$arrNumber = array();
-	$num = $findNumber;
-	$a = 10;
-	$b = 1;
-	$result;
-	
-	while ($num > 0) {
+for($num = 1000; $num < 9999; $num++){
 
-        $digit = $num % $a / $b;
-        $num = $num - ($num % $a);
+$num4 = ($num % 100) % 10; //4
+$num3 = floor($num % 100 / 10);
+$num2 = floor($num / 100) % 10;
+$num1 = floor(floor($num / 100) / 10);
 
 
-       	array_push($arrNumber, $digit);
 
-        $a *= 10;
-        $b *= 10;
+if (($num4 != $num3) && 
+	($num2 != $num1) && 
+	($num4 != $num2) &&
+	($num3 != $num1) &&
+	($num2 != $num3) &&
+	($num1 != $num4) ) {
 
-  	}
+	echo $num.'<br>';
+}
 
-
-  	for($k = 0; $k < count($arrNumber); $k++){
-  	    $count = 0;
-  			
-			
-			  for($i = 0; $i < count($arrNumber); $i++){
-
-				  if(($arrNumber[$k] == $arrNumber[$i])) {
-
-					  $count++;
-				} 
-
-		}	
-
-			if ($count >= 2){
-					$result = "Есть";
-					break;
-			} else {
-				$result = "Нет";
-			}
-
-	}
-
-echo 'Есть ли в записи натурального числа '.$findNumber.' двe одинаковые цифры? '.$result;
+}
