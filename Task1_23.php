@@ -21,3 +21,7 @@ for($k = 0; $k < count($arr); $k++){
 			    } 
     	}  
  }
+
+ for($d = 0; $d < count($arr); $d++){
+ 	echo $arr[$d];
+ }
