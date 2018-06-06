@@ -10,8 +10,7 @@ $arr2 = array(2,3,7);
 			if($arr1[$l] == $arr1[$i]){
 				continue;
 
-			} 
-				
+			} 				
 				for($k = 0; $k < count($arr1); $k++) {
 
 					if($arr1[$k] == $arr1[$l] || $arr1[$k] == $arr1[$i]) {
@@ -25,10 +24,10 @@ $arr2 = array(2,3,7);
 							continue;
 
 						} 
-							echo $arr2[$i];
-							echo $arr1[$l];
-							echo $arr1[$k];
-							echo $arr1[$j].'<br>';
+						echo $arr2[$i];
+						echo $arr1[$l];
+						echo $arr1[$k];
+						echo $arr1[$j].'<br>';
 					 							
 					}
 								
