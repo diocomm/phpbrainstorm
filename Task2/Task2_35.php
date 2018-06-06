@@ -5,11 +5,18 @@ $arr = array(0, 0, 1, 1, 0, 1, 2, 2, 1, 0, 0, 1);
 for($k = 0; $k < count($arr); $k++){
 
 		for($i = 0; $i < count($arr) - 1 ; $i++){
+			
+			if($arr[$i] != 0) {
+			 	$x = $arr[$i + 1];
+			 	$arr[$i + 1] = $arr[$i];
+			 	$arr[$i] = $x;
 
-			if($arr[$i] > $arr[$i + 1] ) {
-          $x = $arr[$i + 1];
-          $arr[$i + 1] = $arr[$i];
-          $arr[$i] = $x;
+			} 
+
+			if($arr[$i] < $arr[$i + 1] && $arr[$i] != 0 ) {
+			 	$x = $arr[$i + 1];
+			 	$arr[$i + 1] = $arr[$i];
+			 	$arr[$i] = $x;
 
 			} 
 
