@@ -4,7 +4,7 @@ $a = 32045;
 
 while ($a != 0){
 
-    $dig = $a % 10;
+   	$dig = $a % 10;
 	$a = floor($a / 10);
 	$num .= $dig;
 }
