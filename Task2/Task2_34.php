@@ -16,24 +16,24 @@ for($k = 0; $k < count($arrA); $k++){
 }
 
 for($t = 0; $t < $p; $t++){
-	$element = rand(0, 20);
+	$element = rand(0, 40);
 	
 	for($i = 0; $i < count($arrA); $i++) {
 
 		if ($element > $arrA[count($arrA) - 1]){	
-			//array_push($arrA, $element);
 			$arrA[count($arrA)] = $element;
+
 		} else if ($arrA[$i] <= $element && $arrA[$i + 1] >= $element) {
 
-				$temp = $arrA[count($arrA) - 1];
+			$temp = $arrA[count($arrA) - 1];
 			     
-			    for ($r = count($arrA) - 1; $r > $i ;$r--) {
-			     	$arrA[$r] = $arrA[$r - 1];
-			    }
+			for ($r = count($arrA) - 1; $r > $i ;$r--) {
+			   $arrA[$r] = $arrA[$r - 1];
+			}
 			     
-			    $arrA[$i + 1] = $element;
+			   $arrA[$i + 1] = $element;
 
-			    $arrA[count($arrA)] = $temp;		
+			   $arrA[count($arrA)] = $temp;		
 				break;
 		}
 		
