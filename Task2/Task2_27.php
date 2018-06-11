@@ -1,32 +1,22 @@
-//Task2_27 В  массив  А(N),  упорядоченный  по  возрастанию,  вставить   k  элементов, не нарушая его последовательности.
-
-$arrA = array(1, 2, 3, 4, 5, 6, 88, 98, 199, 288, 336, 411);
+$arrA = array(10, 20, 30, 40, 50, 60, 88, 90, 99, 288, 336, 411);
 $arrB = array();
-$p = 5;//k элементов
-$element = 89;
-
-//min max
-
+$p = 2;//k элементов
+$element = 23;
 
 for($i = 0; $i < count($arrA); $i++) {
 
 	if($arrA[$i] <= $element && $arrA[$i + 1] >= $element) {
 
-		$c = 0;
-		for($j = $i + 1; $j < count($arrA); $j++){//copy arrA
-			$arrB[$c++] = $arrA[$j];
-		}
-	
-		for($h = $i + 1; $h <= ($p + $i); $h++){//insert min
-			$arrA[$h] = $element;
-	
-		}
+		for($n = 0; $n < $p; $n++){
+			$c = count($arrA) - 1;
+			for($j = $c; $j >= $i + 1; $j--) {
 
-		$b = 0;
-		for($m = $h; $m < (count($arrB) + $h); $m++){// + arrB
-			$arrA[$m] = $arrB[$b++];
-		
-		}
-		break;
+				$arrA[$j + 1] = $arrA[$j];
+				$arrA[$j] = $element;
+			}
+		}	
+
+		 break;
 	}
+	
 }
