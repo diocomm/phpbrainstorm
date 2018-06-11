@@ -1,34 +1,32 @@
 //Task1_6  Получить  все  четырехзначные  числа,  в  записи  которых  встречаются только цифры 0,2,3,7.
 
-$arr1 = array(2,3,7,0);
-$arr2 = array(2,3,7);
-
-	for($i = 0; $i < count($arr2); $i++) {
+	$a = 0;
+	$b = 2;
+	$c = 3;
+	$d = 7;
+	for($i = $b; $i <= $d; $i++) {
+		
+		if($i != $b && $i != $c && $i != $d){
+			continue;
+		}
 	
-		for($l = 0; $l < count($arr1); $l++) {
-
-			if($arr1[$l] == $arr1[$i]){
+		for($l = $a; $l <= $d; $l++) {
+			if(($l != $a && $l != $b && $l != $c && $l != $d) || ($i == $l)){
 				continue;
-
-			} 				
-				for($k = 0; $k < count($arr1); $k++) {
-
-					if($arr1[$k] == $arr1[$l] || $arr1[$k] == $arr1[$i]) {
+			}
+			 				
+				for($k = $a; $k <= $d; $k++) {
+					if(($k != $a && $k != $b && $k != $c && $k != $d) || ($k == $l || $k == $i)){
 						continue;
-
-					} 
-
-					for($j = 0; $j < count($arr1); $j++){
-
-						if($arr1[$j] == $arr1[$l] || $arr1[$j] == $arr1[$i] || $arr1[$j] == $arr1[$k]) {
+					}
+			
+					for($j = $a; $j <= $d; $j++){
+						if(($j != $a && $j != $b && $j != $c && $j != $d) || ($j == $l || $j == $i || $j == $k)){
 							continue;
-
-						} 
-						echo $arr2[$i];
-						echo $arr1[$l];
-						echo $arr1[$k];
-						echo $arr1[$j].'<br>';
-					 							
+						}
+						
+						echo $i.$l.$k.$j.'<br>';
+										
 					}
 								
 				}
