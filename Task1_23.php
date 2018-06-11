@@ -1,27 +1,34 @@
 //Task1_23 Дано  целое  число  N.  Преобразовать  число  так, чтобы его цифры  
 //следовали в порядке возрастания.
+$num =  16271;
 
-$arr = array();
-$a = 2142903;
+$dig1 = $num % 10;
+ 	$num = floor($num / 10);
 
-while ($a != 0){
-	    $dig = $a % 10;
-	    $a = floor($a / 10);
-		  array_push($arr, $dig);
+	while ($num != 0){
+		  
+		if (($num % 10) > ($dig1 % 10)){
+
+		   	$dig1 = $dig1 * 10 + $num % 10;
+		       
+		    } else {
+
+				while (($num % 10 < $dig1 % 10) && ($dig1 >= 0)){ 
+						     
+					$num2 = $num2 * 10 + $dig1 % 10;
+					$dig1 = floor($dig1 / 10);
+						       
+				}
+				   	$dig1 = $dig1 * 10 + $num % 10;
+
+ 				while ($num2 != 0){
+						    
+					$dig1 = $dig1 * 10 + $num2 % 10;
+					$num2 = floor($num2 / 10);
+				}  
+		    }
+		    $num = floor($num / 10);
+		
 }
 
-for($k = 0; $k < count($arr); $k++){
-
-		  for($i = 0; $i < count($arr) - 1 ; $i++){
-    
-          if($arr[$i] > $arr[$i + 1] ) {
-              $x = $arr[$i + 1];
-              $arr[$i + 1] = $arr[$i];
-              $arr[$i] = $x;
-			    } 
-    	}  
- }
-
- for($d = 0; $d < count($arr); $d++){
- 	echo $arr[$d];
- }
+echo $dig1.'<br>';
