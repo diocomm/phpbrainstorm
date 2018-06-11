@@ -1,27 +1,26 @@
-$findNumber = 123469;
-$result;
-$a = 10;
-$b = 1;
-$arrNumber = array();
-$num = $findNumber;
-while ($num > 0) {
-    
-    $digit = $num % $a / $b;
-    $num = $num - ($num % $a);
-    array_push($arrNumber, $digit);
-    $a *= 10;
-    $b *= 10;
-        
-}
+//Task1_3 Выяснить, образуют ли цифры данного натурального числа N возрастающую последовательность.
 
-for($i = 0; $i < count($arrNumber); $i++){
+$findNumber =  1237;
+    $num = $findNumber;
+	$flagDif = true;
+            while (($num != 0) && $flagDif) {
+                $dig1 = $num % 10;
+                $num = floor($num / 10);
 
-    if(($arrNumber[$i] < $arrNumber[$i + 1])) {
+                $tempNum = $num;
 
-        $result = "не образуют";
-        break;
-    } $result = "образуют";
+	                while (($tempNum != 0) && $flagDif ) {
+	                	$dig2 = $tempNum % 10;
+	                    if ($dig2 >= $dig1) {
+	                    	$flagDif = false;
+	                    } 
+	                    	
+	                    $tempNum = floor($tempNum / 10);
+	                }
+            }
 
-}
-
-echo 'цифры натурального числа '.$findNumber.' возрастающую последовательность '.$result;
+            if ($flagDif) {
+                echo 'Образуют возрастающую последовательность '. $findNumber.'<br>';
+            } else {
+                echo "Не образуют возрастающую последовательность ".$findNumber;
+            }
