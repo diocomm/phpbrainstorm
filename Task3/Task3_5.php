@@ -18,7 +18,7 @@ for($i = 0; $i < count($arr[0]); $i++) {
               $count++;
           }
 
-  		    if($count == count($arr) - 1){
+  		    if($count == count($arr)){
   			
               for($f = 0; $f < count($arr); $f++){
                   $sum += $arr[$f][$i];
