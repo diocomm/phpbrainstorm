@@ -16,7 +16,7 @@ for($i = 0; $i < count($arr); $i++) {
   	  		  $count++;
     		} 
 		
-    		if($count == count($arr[$i])){
+    		if($count == count($arr[$i]) - 1){
             $min = $arr[$i][0];
             $max = $arr[$i][0];
 
