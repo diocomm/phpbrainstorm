@@ -18,10 +18,10 @@ for($i = count($arr); $i >= 0; $i--) {
         }
     }	
     
-		if ($count < $min && $count != 0){
-			$min = $count;
-			$indexMin = $i;
-		}		
+	if ($count < $min && $count != 0){
+		$min = $count;
+		$indexMin = $i;
+	}		
 }
 
 for($t = 0; $t < count($arr); $t++){
