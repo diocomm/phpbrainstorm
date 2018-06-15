@@ -21,7 +21,7 @@ $sum = 0;
 for ($i = 1; $i < count($arr[0]); $i++){
     for ($j = count($arr[0]) - $i; $j < count($arr[0]); $j++){
 
-		$sum += $arr[$i][$i];  
+		$sum += $arr[$i][$j];  
   	}
 
 }
@@ -30,7 +30,7 @@ $sum = 0;
   for ($i = 0; $i < count($arr[0]) - 1 ; $i++){
     for ($j = 0; $j < count($arr[0]) - $i - 1; $j++){
 
-		$sum += $arr[$i][$i];  
+		$sum += $arr[$i][$j];  
   	}
 }
 echo 'Выше диагонали = '.$sum.'<br>';
